@@ -1,0 +1,67 @@
+PKCS#7 Sign/Verification Tool
+=============================
+
+You can find three programs in this distro: sign, verify, sv. The first signs
+given data, adds to the signature a time, the siger's certificate and, if
+wanted, the data (not encrypted). The verify tool simply verifies a given
+signature (and data).
+
+The last tool, sv, is a new tool allowing for singnature generation/verification
+(in fact is derived from the other two) and for signature transformation from
+detached to non-detached (data will be included in the signature itself). When
+usinf this tool parameters you have to pass are exactly the same as the ones
+reported below for the sign/verify part.
+
+Signing tool syntax is as follows:
+
+usage: sign args
+
+ -in file        - Input file
+ -out file       - File where to write to
+ -cert file      - Certificate file
+ -keyfile file   - Sign key file
+ -key            - Password protecting the private key
+ -nd             - No detach signature
+ -verbose        - Verbose printing
+
+Jus one note on the -nd flag: when used the data is added to the PKCS7
+structure toghether with signature and other stuff. It is possible to
+retrieve such data using the corresponding verify tool.
+
+EXAMPLE:
+
+	sign -in README -out README.sig -cert cert.pem -keyfile key.pem \
+		-key mypasswd -nd
+		
+
+Verifying tool syntax is as follows:
+
+usage: verify args
+
+ -signature file  - Signature file
+ -out file        - Output file
+ -data file       - File containing signed data
+ -cf file         - CA's certificate file
+ -cd certsdir     - CAs' certificates directory
+ -print_data      - Print Signed Data to outfile
+ -verbose         - Verbose output
+
+The signature file is the file containing the PKCS7 structure to be
+verified. Now it is possible to verify only PEM formatted pkcs7, such
+files do have header and footer lines as follows:
+
+-----BEGIN PKCS7-----
+ASDADSSDASDASDa....
+...................
+....DSDSADADSADS==
+-----END PKCS7-----
+
+Providing the -cf file usually will fit for most applications, however if
+you have chained certificates you can use the -cd certsdir to specify the
+directory where CA certificates (and hashes values) are kept.
+
+EXAMPLE:
+
+	./verify -signature README.sig -verbose -cf cacert.pem
+
+

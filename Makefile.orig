@@ -1,0 +1,89 @@
+#!/bin/sh
+#
+# OpenCA PKCS#7 Makefile
+# (C) 2000 by Massimiliano Pala and OpenCA Group
+
+VERSION = 0.6.81
+POD2MAN = /usr/bin/pod2man
+BIN = /usr/local/ssl/bin
+PROGS = sign verify sv
+INCLUDE = -I. -Iinclude/ -I/usr/local/ssl/include
+CRYPTO_LIB = /usr/local/ssl/lib/libcrypto.a
+MANPATH = /usr/local/man
+CC = gcc
+MAKE = make
+SDIRS = crypto/ src/
+
+all: subs sign verify sv-tool
+
+subs:
+	@for i in $(SDIRS); \
+	do \
+		( cd $$i && echo "Making all in $$i directory ... " && $(MAKE) CC='$(CC)' INCLUDE='$(INCLUDE)' \
+		  VERSION='$(VERSION)' TOP='..' ) ; \
+	done
+
+sv-tool: 
+	$(CC) -I$(INCLUDE) -o bin/sv src/sv.o src/tools.o \
+			      crypto/callback.o crypto/verify.o crypto/sign.o \
+			      crypto/verify-tools.c crypto/sign2nd.o $(CRYPTO_LIB)
+
+sign: src/sign.o
+	$(CC) -I$(INCLUDE) -o bin/sign src/sign.o $(CRYPTO_LIB)
+
+verify: src/verify.o src/example.o
+	$(CC) -I$(INCLUDE) -o bin/verify src/verify.o src/example.o $(CRYPTO_LIB)
+
+install:
+	@echo "" ; \
+	echo "Installing progs to $(BIN) ... "; \
+	echo "" ; \
+	for i in $(PROGS) ; \
+	do \
+		echo -n "        copying $$i ... " ; \
+		if [ -e $(BIN)/$$i ] ; then \
+			( mv $(BIN)/$$i $(BIN)/$$i.old ) >/dev/null 2>&1; \
+		fi ; \
+		( cp -f bin/$$i $(BIN) ) >/dev/null 2>&1; \
+		if [ "$$?" = "0" ] ; then \
+			echo "Ok." ; \
+		else \
+			echo "Error (write permissions ???)." ; \
+		fi ; \
+	done ; \
+	echo ""
+	@echo -n "Installing man pages ... "; \
+	cp -rf docs/man* $(MANPATH)
+	@echo "Done."
+	@echo ""
+	@echo "All Done."
+	@echo
+
+docs:
+	$(POD2MAN) docs/verify --section=3 \
+		 --center="OpenCA PKCS7 Verification Tool" \
+		 --release="Open Certification Authority" \
+		 >docs/man3/OpenCA::verify.3 ; \
+	$(POD2MAN) docs/sign --section=3 \
+		 --center="OpenCA PKCS7 Signing Tool" \
+		 --release="Open Certification Authority" \
+		 >docs/man3/OpenCA::sign.3 
+
+clean:
+	@for i in $(SDIRS) ; do \
+		( cd $$i && echo "Cleaning up $$i directory ... " && $(MAKE) clean && cd .. ) ; \
+	done
+	@rm -f *.o bin/sign bin/verify bin/sv
+
+dist:
+	@mkdir  /tmp/OpenCA-SV-$(VERSION); \
+	cp -rf * "/tmp/OpenCA-SV-$(VERSION)" ; \
+	cd /tmp ; \
+	rm -rf OpenCA-SV-$(VERSION)/CVS ; \
+	rm -rf OpenCA-SV-$(VERSION)/*/CVS ; \
+	rm -rf OpenCA-SV-$(VERSION)/*/*/CVS ; \
+	tar cfpz OpenCA-SV-$(VERSION).tar.gz OpenCA-SV-$(VERSION) ; \
+	cd - ; \
+	mv "/tmp/OpenCA-SV-$(VERSION).tar.gz" . ; \
+	rm -rf "/tmp/OpenCA-SV-$(VERSION)"
+

@@ -1,0 +1,211 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:528: checking for gcc
+configure:641: checking whether the C compiler (gcc  ) works
+configure:657: gcc -o conftest    conftest.c  1>&5
+configure:683: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:688: checking whether we are using GNU C
+configure:697: gcc -E conftest.c
+configure:716: checking whether gcc accepts -g
+configure:748: checking how to run the C preprocessor
+configure:769: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:828: checking for ANSI C header files
+configure:841: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:908: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:936: checking for openssl/bio.h
+configure:946: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:942: openssl/bio.h: No such file or directory
+configure: failed program was:
+#line 941 "configure"
+#include "confdefs.h"
+#include <openssl/bio.h>
+configure:936: checking for openssl/asn1.h
+configure:946: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:942: openssl/asn1.h: No such file or directory
+configure: failed program was:
+#line 941 "configure"
+#include "confdefs.h"
+#include <openssl/asn1.h>
+configure:936: checking for openssl/x509.h
+configure:946: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:942: openssl/x509.h: No such file or directory
+configure: failed program was:
+#line 941 "configure"
+#include "confdefs.h"
+#include <openssl/x509.h>
+configure:936: checking for openssl/pem.h
+configure:946: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:942: openssl/pem.h: No such file or directory
+configure: failed program was:
+#line 941 "configure"
+#include "confdefs.h"
+#include <openssl/pem.h>
+configure:936: checking for openssl/err.h
+configure:946: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:942: openssl/err.h: No such file or directory
+configure: failed program was:
+#line 941 "configure"
+#include "confdefs.h"
+#include <openssl/err.h>
+configure:973: checking for BIO_printf  in -lcrypto
+configure:992: gcc -o conftest -g -O2   conftest.c -lcrypto   1>&5
+configure:1020: checking for BIO_new in -lcrypto
+configure:1039: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto  1>&5
+configure:1067: checking for BIO_read in -lcrypto
+configure:1086: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto  1>&5
+configure:1114: checking for BIO_read_filename in -lcrypto
+configure:1133: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto  1>&5
+/tmp/ccyxXgkt.o: In function `main':
+/usr/tmp/openca-sv/configure:1129: undefined reference to `BIO_read_filename'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1122 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char BIO_read_filename();
+
+int main() {
+BIO_read_filename()
+; return 0; }
+configure:1161: checking for BIO_set_fp in -lcrypto
+configure:1180: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto  1>&5
+/tmp/cczauVYR.o: In function `main':
+/usr/tmp/openca-sv/configure:1176: undefined reference to `BIO_set_fp'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1169 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char BIO_set_fp();
+
+int main() {
+BIO_set_fp()
+; return 0; }
+configure:1208: checking for BIO_free in -lcrypto
+configure:1227: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto  1>&5
+configure:1255: checking for EVP_add_digest in -lcrypto
+configure:1274: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1302: checking for PEM_read_bio_PKCS7 in -lcrypto
+configure:1321: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1349: checking for X509_STORE_new in -lcrypto
+configure:1368: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1396: checking for X509_STORE_set_default_paths in -lcrypto
+configure:1415: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1443: checking for X509_STORE_load_locations in -lcrypto
+configure:1462: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1490: checking for X509_STORE_set_verify_cb_func in -lcrypto
+configure:1509: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+/tmp/ccfXIJuC.o: In function `main':
+/usr/tmp/openca-sv/configure:1505: undefined reference to `X509_STORE_set_verify_cb_func'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1498 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char X509_STORE_set_verify_cb_func();
+
+int main() {
+X509_STORE_set_verify_cb_func()
+; return 0; }
+configure:1537: checking for X509_STORE_CTX_get_current_cert in -lcrypto
+configure:1556: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1584: checking for X509_STORE_CTX_get_error in -lcrypto
+configure:1603: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1631: checking for X509_STORE_CTX_get_error_depth in -lcrypto
+configure:1650: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1678: checking for X509_get_subject_name in -lcrypto
+configure:1697: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1725: checking for X509_NAME_oneline in -lcrypto
+configure:1744: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1772: checking for X509_get_serialNumber in -lcrypto
+configure:1791: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1819: checking for X509_verify_cert_error_string in -lcrypto
+configure:1838: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1866: checking for X509_STORE_CTX_set_error in -lcrypto
+configure:1885: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1913: checking for X509_get_issuer_name in -lcrypto
+configure:1932: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:1960: checking for X509_NAME_oneline in -lcrypto
+configure:2007: checking for X509_get_notBefore in -lcrypto
+configure:2026: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+/tmp/ccyafXhg.o: In function `main':
+/usr/tmp/openca-sv/configure:2022: undefined reference to `X509_get_notBefore'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2015 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char X509_get_notBefore();
+
+int main() {
+X509_get_notBefore()
+; return 0; }
+configure:2054: checking for X509_get_notAfter in -lcrypto
+configure:2073: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+/tmp/ccgdZR9j.o: In function `main':
+/usr/tmp/openca-sv/configure:2069: undefined reference to `X509_get_notAfter'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2062 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char X509_get_notAfter();
+
+int main() {
+X509_get_notAfter()
+; return 0; }
+configure:2101: checking for X509_STORE_free in -lcrypto
+configure:2120: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2148: checking for ERR_clear_error in -lcrypto
+configure:2167: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2195: checking for PKCS7_get_detached in -lcrypto
+configure:2214: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+/tmp/ccPOTVaQ.o: In function `main':
+/usr/tmp/openca-sv/configure:2210: undefined reference to `PKCS7_get_detached'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2203 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char PKCS7_get_detached();
+
+int main() {
+PKCS7_get_detached()
+; return 0; }
+configure:2242: checking for PKCS7_dataInit in -lcrypto
+configure:2261: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2289: checking for PKCS7_get_signer_info in -lcrypto
+configure:2308: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2336: checking for sk_PKCS7_SIGNER_INFO_value in -lcrypto
+configure:2355: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2383: checking for PKCS7_dataVerify in -lcrypto
+configure:2402: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2430: checking for ASN1_UTCTIME_print in -lcrypto
+configure:2449: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2477: checking for ERR_load_crypto_strings in -lcrypto
+configure:2496: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2524: checking for ERR_print_errors_fp in -lcrypto
+configure:2543: gcc -o conftest -g -O2   conftest.c -lcrypto  -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto -lcrypto  1>&5
+configure:2573: checking for bash
+configure:2603: checking for pod2man
+configure:2633: checking for make
+configure:2662: checking for install
+configure:2691: checking for mkdir
+configure:2720: checking for sed
+configure:2749: checking for mv
+configure:2778: checking for chmod
+configure:2807: checking for cp
+configure:2834: checking whether ln -s works
